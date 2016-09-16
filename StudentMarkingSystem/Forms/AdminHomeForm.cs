@@ -16,5 +16,17 @@ namespace StudentMarkingSystem.Forms
         {
             InitializeComponent();
         }
+
+        private void AddProgramButton_Click(object sender, EventArgs e)
+        {
+            AddProgramForm addProgram = new AddProgramForm();
+            addProgram.ShowDialog();
+        }
+
+        private void ViewProgramButton_Click(object sender, EventArgs e)
+        {
+            ViewProgramForm viewProgram = new ViewProgramForm();
+            viewProgram.ShowDialog();
+        }
     }
 }
