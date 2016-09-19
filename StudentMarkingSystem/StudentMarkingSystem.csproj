@@ -34,8 +34,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,12 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\AddProgramForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AddProgramForm.Designer.cs">
-      <DependentUpon>AddProgramForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\AdminHomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,12 +67,6 @@
     <Compile Include="Forms\SuperUserForm.Designer.cs">
       <DependentUpon>SuperUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ViewProgramForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ViewProgramForm.Designer.cs">
-      <DependentUpon>ViewProgramForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,14 +79,8 @@
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Repository\DbConfiguration.cs" />
     <Compile Include="Repository\Security.cs" />
-    <EmbeddedResource Include="Forms\AddProgramForm.resx">
-      <DependentUpon>AddProgramForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminHomeForm.resx">
       <DependentUpon>AdminHomeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ViewProgramForm.resx">
-      <DependentUpon>ViewProgramForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -109,6 +93,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -124,6 +109,24 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\University_of_Technology_Mauritius_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControl\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserProfileIcon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male-circle-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

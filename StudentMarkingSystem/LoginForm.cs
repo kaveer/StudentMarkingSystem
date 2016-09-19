@@ -17,6 +17,7 @@ namespace StudentMarkingSystem
 {
     public partial class LoginForm : Form
     {
+        public static string userName;
         public LoginForm()
         {
             InitializeComponent();
@@ -40,7 +41,6 @@ namespace StudentMarkingSystem
         public void RetrieveUser(UserViewModel user)
         {
             DbConfiguration configuration = new DbConfiguration();
-
             SqlCommand com = new SqlCommand();
             DataSet dataSet = new DataSet();
             com.Connection = new SqlConnection(configuration.GetConnectionString());
@@ -56,26 +56,31 @@ namespace StudentMarkingSystem
                 MessageBox.Show("No account with this credential");
                 return;
             }
-            else
-            {
-                foreach (DataRow item in dataSet.Tables[0].Rows)
-                {
-                    user.UserId = Convert.ToInt32(item["UserId"]);
-                    user.UserInfoId = Convert.ToInt32(item["UserInfoId"]);
-                    user.UserFirstName = item["UserFirstName"].ToString();
-                    user.UserLastName = item["UserLastName"].ToString();
-                    user.EmailAddress = item["EmailAddress"].ToString();
-                    user.UserAddress = item["UserAddress"].ToString();
-                    user.Contact = Convert.ToInt32(item["Contact"]);
-                    user.UserPassword = item["UserPassword"].ToString();
-                    user.UserStatus = item["UserStatus"].ToString();
-                    user.UserType = item["UserType"].ToString();
-                }
 
-                if (!CheckStatus(user) == true)
-                    return;
-                CheckType(user);
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                RetrieveUserValues(row, user);
             }
+
+            if (!IsStatusActive(user))
+                return;
+
+            CheckType(user);
+
+        }
+
+        private void RetrieveUserValues(DataRow row, UserViewModel user)
+        {
+            user.UserId = Convert.ToInt32(row["UserId"]);
+            user.UserInfoId = Convert.ToInt32(row["UserInfoId"]);
+            user.UserFirstName = row["UserFirstName"].ToString();
+            user.UserLastName = row["UserLastName"].ToString();
+            user.EmailAddress = row["EmailAddress"].ToString();
+            user.UserAddress = row["UserAddress"].ToString();
+            user.Contact = Convert.ToInt32(row["Contact"]);
+            user.UserPassword = row["UserPassword"].ToString();
+            user.UserStatus = row["UserStatus"].ToString();
+            user.UserType = row["UserType"].ToString();
         }
 
         public bool MapViewModel(UserViewModel user)
@@ -103,19 +108,20 @@ namespace StudentMarkingSystem
             }
         }
 
-        public bool CheckStatus(UserViewModel user)
+        public bool IsStatusActive(UserViewModel user)
         {
-            if (user.UserStatus == "deactive")
-            {
-                MessageBox.Show("This Account is deactivated");
-                return false;
-            }
+            bool isActive = user.UserStatus == "active" ? true : false;
 
-            return true;
+            if (user.UserStatus == "deactive")
+                MessageBox.Show("This Account is deactivated");
+
+            return isActive;
         }
 
         public void CheckType(UserViewModel user)
         {
+            userName = user.UserFirstName + " " + user.UserLastName;
+
             if (user.UserType == "admin")
             {
                 AdminHomeForm admin = new AdminHomeForm();
@@ -134,6 +140,15 @@ namespace StudentMarkingSystem
                 this.Hide();
                 superuser.Show();
             }
+           
+
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            EmailAddressTextBox.Text = "kaveer.rajcoomar@gmail.com";
+            PasswordTextbox.Text = "kaveer";
+        }
+       
     }
 }
