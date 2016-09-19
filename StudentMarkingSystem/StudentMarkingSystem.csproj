@@ -79,6 +79,12 @@
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Repository\DbConfiguration.cs" />
     <Compile Include="Repository\Security.cs" />
+    <Compile Include="UIComponent\Admin\UIAddProgram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIComponent\Admin\UIAddProgram.Designer.cs">
+      <DependentUpon>UIAddProgram.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AdminHomeForm.resx">
       <DependentUpon>AdminHomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +101,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UIComponent\Admin\UIAddProgram.resx">
+      <DependentUpon>UIAddProgram.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -113,9 +122,7 @@
   <ItemGroup>
     <None Include="Resources\University_of_Technology_Mauritius_Logo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserControl\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\UserProfileIcon.bmp" />
   </ItemGroup>

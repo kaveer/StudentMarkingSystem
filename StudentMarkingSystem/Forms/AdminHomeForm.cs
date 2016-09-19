@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StudentMarkingSystem.UIComponent.Admin;
 
 namespace StudentMarkingSystem.Forms
 {
@@ -22,6 +23,11 @@ namespace StudentMarkingSystem.Forms
         private void AdminHomeForm_Load(object sender, EventArgs e)
         {
             username_label.Text = LoginForm.userName;
+
+            UIAddProgram program = new UIAddProgram();
+            MainPanel.Controls.Add(program);
+
+            
         }
     }
 }
