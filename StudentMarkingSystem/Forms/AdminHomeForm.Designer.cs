@@ -43,10 +43,13 @@
             this.editProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button14 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.BtnCohort = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.BtnProgramme = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -56,9 +59,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -76,7 +76,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(964, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(965, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "AdminMenuStrip";
             // 
@@ -185,17 +185,18 @@
             this.button14.Text = "Student Management";
             this.button14.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // BtnCohort
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(0, 53);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(228, 53);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Cohort Management";
-            this.button4.UseVisualStyleBackColor = true;
+            this.BtnCohort.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnCohort.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnCohort.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCohort.Location = new System.Drawing.Point(0, 53);
+            this.BtnCohort.Name = "BtnCohort";
+            this.BtnCohort.Size = new System.Drawing.Size(228, 53);
+            this.BtnCohort.TabIndex = 3;
+            this.BtnCohort.Text = "Cohort Management";
+            this.BtnCohort.UseVisualStyleBackColor = true;
+            this.BtnCohort.Click += new System.EventHandler(this.BtnCohort_Click);
             // 
             // button15
             // 
@@ -226,17 +227,54 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(241)))));
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.BtnProgramme);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button15);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.BtnCohort);
             this.panel1.Controls.Add(this.button14);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 119);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 419);
+            this.panel1.Size = new System.Drawing.Size(228, 530);
             this.panel1.TabIndex = 8;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(0, 320);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(228, 54);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "Exit";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(0, 266);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(228, 54);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Option";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // BtnProgramme
+            // 
+            this.BtnProgramme.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnProgramme.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnProgramme.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProgramme.Location = new System.Drawing.Point(0, 212);
+            this.BtnProgramme.Name = "BtnProgramme";
+            this.BtnProgramme.Size = new System.Drawing.Size(228, 54);
+            this.BtnProgramme.TabIndex = 9;
+            this.BtnProgramme.Text = "Programme";
+            this.BtnProgramme.UseVisualStyleBackColor = true;
+            this.BtnProgramme.Click += new System.EventHandler(this.BtnProgramme_Click);
             // 
             // panel2
             // 
@@ -246,7 +284,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 24);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(964, 95);
+            this.panel2.Size = new System.Drawing.Size(965, 95);
             this.panel2.TabIndex = 8;
             // 
             // panel5
@@ -254,7 +292,7 @@
             this.panel5.Controls.Add(this.pictureBox2);
             this.panel5.Controls.Add(this.username_label);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(677, 0);
+            this.panel5.Location = new System.Drawing.Point(678, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(287, 95);
             this.panel5.TabIndex = 10;
@@ -327,52 +365,16 @@
             // MainPanel
             // 
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MainPanel.Location = new System.Drawing.Point(228, 119);
+            this.MainPanel.Location = new System.Drawing.Point(229, 119);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(736, 419);
+            this.MainPanel.Size = new System.Drawing.Size(736, 530);
             this.MainPanel.TabIndex = 9;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 212);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(228, 54);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Programme";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 266);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(228, 54);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Option";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(0, 320);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(228, 54);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Exit";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // AdminHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 538);
+            this.ClientSize = new System.Drawing.Size(965, 649);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.panel2);
@@ -412,7 +414,7 @@
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editProfileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BtnCohort;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button1;
@@ -429,6 +431,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button BtnProgramme;
     }
 }

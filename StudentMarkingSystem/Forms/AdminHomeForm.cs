@@ -13,6 +13,9 @@ namespace StudentMarkingSystem.Forms
 {
     public partial class AdminHomeForm : Form
     {
+        UIAddProgram program = new UIAddProgram();
+        UICohort cohort = new UICohort();
+
         public AdminHomeForm()
         {
             InitializeComponent();
@@ -24,10 +27,23 @@ namespace StudentMarkingSystem.Forms
         {
             username_label.Text = LoginForm.userName;
 
-            UIAddProgram program = new UIAddProgram();
-            MainPanel.Controls.Add(program);
+            
+            
 
             
+        }
+
+        private void BtnProgramme_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(program);
+            
+        }
+
+        private void BtnCohort_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(cohort);
         }
     }
 }
