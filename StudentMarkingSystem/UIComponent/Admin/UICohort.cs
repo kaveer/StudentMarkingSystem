@@ -205,5 +205,40 @@ namespace StudentMarkingSystem.UIComponent.Admin
 
             MessageBox.Show("Cohort Updated");
         }
+
+        private void ButtonDeleteProgramme_Click(object sender, EventArgs e)
+        {
+            if (DDLProgramme.Text == "")
+            {
+                MessageBox.Show("Select a programme to delete cohort");
+                return;
+            }
+            if (DDLCohort.Text == "")
+            {
+                MessageBox.Show("Select a cohort to delete");
+                return;
+            }
+
+            DeleteProgramme(cohort);
+        }
+
+        private void DeleteProgramme(CohortViewModel cohort)
+        {
+            DbConfiguration configuration = new DbConfiguration();
+            SqlCommand com = new SqlCommand();
+            DataSet dataSet = new DataSet();
+            com.Connection = new SqlConnection(configuration.GetConnectionString());
+            com.Parameters.Add(new SqlParameter("@cohortId", cohort.CohortId));
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "DeleteCohort";
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dataSet);
+
+            ClearDropDownList();
+            TxtBxCohortName.Text = "";
+            RetrieveProgram();
+
+            MessageBox.Show("Cohort Deleted");
+        }
     }
 }

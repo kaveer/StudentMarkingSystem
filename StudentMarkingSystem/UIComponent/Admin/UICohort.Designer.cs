@@ -83,6 +83,7 @@
             this.ButtonDeleteProgramme.TabIndex = 10;
             this.ButtonDeleteProgramme.Text = "Delete";
             this.ButtonDeleteProgramme.UseVisualStyleBackColor = true;
+            this.ButtonDeleteProgramme.Click += new System.EventHandler(this.ButtonDeleteProgramme_Click);
             // 
             // ButtonUpdate
             // 
@@ -214,7 +215,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Name = "UICohort";
-            this.Size = new System.Drawing.Size(739, 514);
+            this.Size = new System.Drawing.Size(654, 432);
             this.Load += new System.EventHandler(this.UICohort_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
