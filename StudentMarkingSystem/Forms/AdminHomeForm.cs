@@ -15,6 +15,7 @@ namespace StudentMarkingSystem.Forms
     {
         UIAddProgram program = new UIAddProgram();
         UICohort cohort = new UICohort();
+        UIStudent student = new UIStudent();
 
         public AdminHomeForm()
         {
@@ -44,6 +45,12 @@ namespace StudentMarkingSystem.Forms
         {
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(cohort);
+        }
+
+        private void BtnStudentManagement_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(student);
         }
     }
 }

@@ -75,6 +75,7 @@
     </Compile>
     <Compile Include="Models\CohortViewModel.cs" />
     <Compile Include="Models\ProgramViewModel.cs" />
+    <Compile Include="Models\StudentViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\UserViewModel.cs" />
@@ -91,6 +92,12 @@
     </Compile>
     <Compile Include="UIComponent\Admin\UICohort.Designer.cs">
       <DependentUpon>UICohort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIComponent\Admin\UIStudent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIComponent\Admin\UIStudent.Designer.cs">
+      <DependentUpon>UIStudent.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AdminHomeForm.resx">
       <DependentUpon>AdminHomeForm.cs</DependentUpon>
@@ -113,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UIComponent\Admin\UICohort.resx">
       <DependentUpon>UICohort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIComponent\Admin\UIStudent.resx">
+      <DependentUpon>UIStudent.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -42,7 +42,7 @@
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button14 = new System.Windows.Forms.Button();
+            this.BtnStudentManagement = new System.Windows.Forms.Button();
             this.BtnCohort = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -173,17 +173,18 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // button14
+            // BtnStudentManagement
             // 
-            this.button14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button14.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(0, 0);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(228, 53);
-            this.button14.TabIndex = 4;
-            this.button14.Text = "Student Management";
-            this.button14.UseVisualStyleBackColor = true;
+            this.BtnStudentManagement.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnStudentManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnStudentManagement.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnStudentManagement.Location = new System.Drawing.Point(0, 0);
+            this.BtnStudentManagement.Name = "BtnStudentManagement";
+            this.BtnStudentManagement.Size = new System.Drawing.Size(228, 53);
+            this.BtnStudentManagement.TabIndex = 4;
+            this.BtnStudentManagement.Text = "Student Management";
+            this.BtnStudentManagement.UseVisualStyleBackColor = true;
+            this.BtnStudentManagement.Click += new System.EventHandler(this.BtnStudentManagement_Click);
             // 
             // BtnCohort
             // 
@@ -231,7 +232,7 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button15);
             this.panel1.Controls.Add(this.BtnCohort);
-            this.panel1.Controls.Add(this.button14);
+            this.panel1.Controls.Add(this.BtnStudentManagement);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 119);
@@ -415,7 +416,7 @@
         private System.Windows.Forms.ToolStripMenuItem editProfileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button BtnCohort;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button BtnStudentManagement;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
