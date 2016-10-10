@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnClear = new System.Windows.Forms.Button();
             this.TxtbxContact = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.TxtbxAddress = new System.Windows.Forms.TextBox();
@@ -47,8 +48,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.DDLAddProgramme = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.BtnClear = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dropDownlistIndex_update = new System.Windows.Forms.ComboBox();
+            this.ButtonDeleteStudentDetails = new System.Windows.Forms.Button();
+            this.contactNumber_update = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.studentAddress_update = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.emailAddress_update = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.studentLastName_update = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.studentFirstName_update = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dropDownListCohort_update = new System.Windows.Forms.ComboBox();
+            this.ButtonUpdateStudent = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.dropDownListProgramme_update = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -81,12 +101,22 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.DDLAddProgramme);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(255, 66);
+            this.groupBox1.Location = new System.Drawing.Point(314, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(276, 269);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Student";
+            // 
+            // BtnClear
+            // 
+            this.BtnClear.Location = new System.Drawing.Point(99, 232);
+            this.BtnClear.Name = "BtnClear";
+            this.BtnClear.Size = new System.Drawing.Size(75, 23);
+            this.BtnClear.TabIndex = 22;
+            this.BtnClear.Text = "Clear";
+            this.BtnClear.UseVisualStyleBackColor = true;
+            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // TxtbxContact
             // 
@@ -209,9 +239,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 53);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 13);
+            this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Program Name";
+            this.label3.Text = "Cohort Name";
             // 
             // DDLAddProgramme
             // 
@@ -232,27 +262,204 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Select Programme";
             // 
-            // BtnClear
+            // groupBox2
             // 
-            this.BtnClear.Location = new System.Drawing.Point(99, 232);
-            this.BtnClear.Name = "BtnClear";
-            this.BtnClear.Size = new System.Drawing.Size(75, 23);
-            this.BtnClear.TabIndex = 22;
-            this.BtnClear.Text = "Clear";
-            this.BtnClear.UseVisualStyleBackColor = true;
-            this.BtnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            this.groupBox2.Controls.Add(this.dropDownlistIndex_update);
+            this.groupBox2.Controls.Add(this.ButtonDeleteStudentDetails);
+            this.groupBox2.Controls.Add(this.contactNumber_update);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.studentAddress_update);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.emailAddress_update);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.studentLastName_update);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.studentFirstName_update);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.dropDownListCohort_update);
+            this.groupBox2.Controls.Add(this.ButtonUpdateStudent);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.dropDownListProgramme_update);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Location = new System.Drawing.Point(32, 66);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(276, 269);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Update/ delete Student";
+            // 
+            // dropDownlistIndex_update
+            // 
+            this.dropDownlistIndex_update.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropDownlistIndex_update.FormattingEnabled = true;
+            this.dropDownlistIndex_update.Location = new System.Drawing.Point(105, 74);
+            this.dropDownlistIndex_update.Name = "dropDownlistIndex_update";
+            this.dropDownlistIndex_update.Size = new System.Drawing.Size(150, 21);
+            this.dropDownlistIndex_update.TabIndex = 23;
+            this.dropDownlistIndex_update.SelectedIndexChanged += new System.EventHandler(this.dropDownlistIndex_update_SelectedIndexChanged);
+            // 
+            // ButtonDeleteStudentDetails
+            // 
+            this.ButtonDeleteStudentDetails.Location = new System.Drawing.Point(99, 232);
+            this.ButtonDeleteStudentDetails.Name = "ButtonDeleteStudentDetails";
+            this.ButtonDeleteStudentDetails.Size = new System.Drawing.Size(75, 23);
+            this.ButtonDeleteStudentDetails.TabIndex = 22;
+            this.ButtonDeleteStudentDetails.Text = "Delete";
+            this.ButtonDeleteStudentDetails.UseVisualStyleBackColor = true;
+            this.ButtonDeleteStudentDetails.Click += new System.EventHandler(this.ButtonDeleteStudentDetails_Click);
+            // 
+            // contactNumber_update
+            // 
+            this.contactNumber_update.Location = new System.Drawing.Point(105, 206);
+            this.contactNumber_update.Name = "contactNumber_update";
+            this.contactNumber_update.Size = new System.Drawing.Size(150, 20);
+            this.contactNumber_update.TabIndex = 21;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(8, 209);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(84, 13);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Contact Number";
+            // 
+            // studentAddress_update
+            // 
+            this.studentAddress_update.Location = new System.Drawing.Point(105, 180);
+            this.studentAddress_update.Name = "studentAddress_update";
+            this.studentAddress_update.Size = new System.Drawing.Size(150, 20);
+            this.studentAddress_update.TabIndex = 19;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 183);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(45, 13);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Address";
+            // 
+            // emailAddress_update
+            // 
+            this.emailAddress_update.Location = new System.Drawing.Point(105, 154);
+            this.emailAddress_update.Name = "emailAddress_update";
+            this.emailAddress_update.Size = new System.Drawing.Size(150, 20);
+            this.emailAddress_update.TabIndex = 17;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(8, 157);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(72, 13);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "Email address";
+            // 
+            // studentLastName_update
+            // 
+            this.studentLastName_update.Location = new System.Drawing.Point(105, 128);
+            this.studentLastName_update.Name = "studentLastName_update";
+            this.studentLastName_update.Size = new System.Drawing.Size(150, 20);
+            this.studentLastName_update.TabIndex = 15;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(8, 131);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 13);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "Lastname";
+            // 
+            // studentFirstName_update
+            // 
+            this.studentFirstName_update.Location = new System.Drawing.Point(105, 102);
+            this.studentFirstName_update.Name = "studentFirstName_update";
+            this.studentFirstName_update.Size = new System.Drawing.Size(150, 20);
+            this.studentFirstName_update.TabIndex = 13;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(8, 105);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 13);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Firstname";
+            // 
+            // dropDownListCohort_update
+            // 
+            this.dropDownListCohort_update.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropDownListCohort_update.FormattingEnabled = true;
+            this.dropDownListCohort_update.Location = new System.Drawing.Point(105, 49);
+            this.dropDownListCohort_update.Name = "dropDownListCohort_update";
+            this.dropDownListCohort_update.Size = new System.Drawing.Size(150, 21);
+            this.dropDownListCohort_update.TabIndex = 11;
+            this.dropDownListCohort_update.SelectedIndexChanged += new System.EventHandler(this.dropDownListCohort_update_SelectedIndexChanged);
+            // 
+            // ButtonUpdateStudent
+            // 
+            this.ButtonUpdateStudent.Location = new System.Drawing.Point(180, 232);
+            this.ButtonUpdateStudent.Name = "ButtonUpdateStudent";
+            this.ButtonUpdateStudent.Size = new System.Drawing.Size(75, 23);
+            this.ButtonUpdateStudent.TabIndex = 9;
+            this.ButtonUpdateStudent.Text = "Update";
+            this.ButtonUpdateStudent.UseVisualStyleBackColor = true;
+            this.ButtonUpdateStudent.Click += new System.EventHandler(this.ButtonUpdateStudent_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(8, 79);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(50, 13);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Index No";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 53);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(69, 13);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Cohort Name";
+            // 
+            // dropDownListProgramme_update
+            // 
+            this.dropDownListProgramme_update.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropDownListProgramme_update.FormattingEnabled = true;
+            this.dropDownListProgramme_update.Location = new System.Drawing.Point(105, 23);
+            this.dropDownListProgramme_update.Name = "dropDownListProgramme_update";
+            this.dropDownListProgramme_update.Size = new System.Drawing.Size(150, 21);
+            this.dropDownListProgramme_update.TabIndex = 1;
+            this.dropDownListProgramme_update.SelectedIndexChanged += new System.EventHandler(this.dropDownListProgramme_update_SelectedIndexChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 26);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(93, 13);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Select Programme";
             // 
             // UIStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "UIStudent";
-            this.Size = new System.Drawing.Size(588, 417);
+            this.Size = new System.Drawing.Size(629, 370);
             this.Load += new System.EventHandler(this.UIStudent_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +487,24 @@
         private System.Windows.Forms.ComboBox DDLAddProgramme;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnClear;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox dropDownlistIndex_update;
+        private System.Windows.Forms.Button ButtonDeleteStudentDetails;
+        private System.Windows.Forms.TextBox contactNumber_update;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox studentAddress_update;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox emailAddress_update;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox studentLastName_update;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox studentFirstName_update;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox dropDownListCohort_update;
+        private System.Windows.Forms.Button ButtonUpdateStudent;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox dropDownListProgramme_update;
+        private System.Windows.Forms.Label label17;
     }
 }
