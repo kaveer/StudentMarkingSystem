@@ -44,7 +44,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnStudentManagement = new System.Windows.Forms.Button();
             this.BtnCohort = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.BtnLecturerManagement = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
@@ -52,19 +52,19 @@
             this.BtnProgramme = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.username_label = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,17 +199,18 @@
             this.BtnCohort.UseVisualStyleBackColor = true;
             this.BtnCohort.Click += new System.EventHandler(this.BtnCohort_Click);
             // 
-            // button15
+            // BtnLecturerManagement
             // 
-            this.button15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button15.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(0, 106);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(228, 53);
-            this.button15.TabIndex = 6;
-            this.button15.Text = "Lecturer Management";
-            this.button15.UseVisualStyleBackColor = true;
+            this.BtnLecturerManagement.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnLecturerManagement.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnLecturerManagement.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLecturerManagement.Location = new System.Drawing.Point(0, 106);
+            this.BtnLecturerManagement.Name = "BtnLecturerManagement";
+            this.BtnLecturerManagement.Size = new System.Drawing.Size(228, 53);
+            this.BtnLecturerManagement.TabIndex = 6;
+            this.BtnLecturerManagement.Text = "Lecturer Management";
+            this.BtnLecturerManagement.UseVisualStyleBackColor = true;
+            this.BtnLecturerManagement.Click += new System.EventHandler(this.BtnLecturerManagement_Click);
             // 
             // button1
             // 
@@ -230,7 +231,7 @@
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.BtnProgramme);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button15);
+            this.panel1.Controls.Add(this.BtnLecturerManagement);
             this.panel1.Controls.Add(this.BtnCohort);
             this.panel1.Controls.Add(this.BtnStudentManagement);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -298,16 +299,6 @@
             this.panel5.Size = new System.Drawing.Size(287, 95);
             this.panel5.TabIndex = 10;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::StudentMarkingSystem.Properties.Resources.male_circle_512;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 91);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
             // username_label
             // 
             this.username_label.AutoSize = true;
@@ -340,16 +331,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "System";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::StudentMarkingSystem.Properties.Resources.University_of_Technology_Mauritius_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(87, 91);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -371,6 +352,26 @@
             this.MainPanel.Size = new System.Drawing.Size(736, 530);
             this.MainPanel.TabIndex = 9;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::StudentMarkingSystem.Properties.Resources.male_circle_512;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 91);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::StudentMarkingSystem.Properties.Resources.University_of_Technology_Mauritius_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(87, 91);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // AdminHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,9 +391,9 @@
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -417,7 +418,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Button BtnCohort;
         private System.Windows.Forms.Button BtnStudentManagement;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button BtnLecturerManagement;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;

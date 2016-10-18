@@ -16,22 +16,16 @@ namespace StudentMarkingSystem.Forms
         UIAddProgram program = new UIAddProgram();
         UICohort cohort = new UICohort();
         UIStudent student = new UIStudent();
+        UILecturer lecturer = new UILecturer();
 
         public AdminHomeForm()
         {
             InitializeComponent();
         }
 
-        
-
         private void AdminHomeForm_Load(object sender, EventArgs e)
         {
             username_label.Text = LoginForm.userName;
-
-            
-            
-
-            
         }
 
         private void BtnProgramme_Click(object sender, EventArgs e)
@@ -51,6 +45,12 @@ namespace StudentMarkingSystem.Forms
         {
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(student);
+        }
+
+        private void BtnLecturerManagement_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(lecturer);
         }
     }
 }

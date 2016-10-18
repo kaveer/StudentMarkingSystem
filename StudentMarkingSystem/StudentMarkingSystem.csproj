@@ -74,6 +74,7 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CohortViewModel.cs" />
+    <Compile Include="Models\LecturerViewModel.cs" />
     <Compile Include="Models\ProgramViewModel.cs" />
     <Compile Include="Models\StudentViewModel.cs" />
     <Compile Include="Program.cs" />
@@ -92,6 +93,12 @@
     </Compile>
     <Compile Include="UIComponent\Admin\UICohort.Designer.cs">
       <DependentUpon>UICohort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIComponent\Admin\UILecturer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIComponent\Admin\UILecturer.Designer.cs">
+      <DependentUpon>UILecturer.cs</DependentUpon>
     </Compile>
     <Compile Include="UIComponent\Admin\UIStudent.cs">
       <SubType>UserControl</SubType>
@@ -120,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UIComponent\Admin\UICohort.resx">
       <DependentUpon>UICohort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIComponent\Admin\UILecturer.resx">
+      <DependentUpon>UILecturer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIComponent\Admin\UIStudent.resx">
       <DependentUpon>UIStudent.cs</DependentUpon>

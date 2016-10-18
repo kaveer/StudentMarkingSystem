@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using StudentMarkingSystem.Models;
 using StudentMarkingSystem.Repository;
@@ -9,6 +10,8 @@ namespace StudentMarkingSystem.UIComponent.Admin
 {
     public partial class UIStudent : UserControl
     {
+        Regex reg = new Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+
         string programmeName;
         string cohortName;
         string index;
@@ -144,6 +147,8 @@ namespace StudentMarkingSystem.UIComponent.Admin
 
         private void BtnAddStudent_Click(object sender, EventArgs e)
         {
+            
+
             if (DDLAddProgramme.Text == "")
             {
                 MessageBox.Show("Select a programme");
@@ -167,6 +172,11 @@ namespace StudentMarkingSystem.UIComponent.Admin
             if (string.IsNullOrWhiteSpace(TxtbxLastname.Text))
             {
                 MessageBox.Show("Enter lastname of student");
+                return;
+            }
+            if (!reg.IsMatch(TxtbxEmail.Text))
+            {
+                MessageBox.Show("Invalid Email Address");
                 return;
             }
             AddStudent(SetStudentDetails(student));
@@ -257,8 +267,34 @@ namespace StudentMarkingSystem.UIComponent.Admin
 
         private void ButtonUpdateStudent_Click(object sender, EventArgs e)
         {
-            GetStudentDetails(student);
-            UpdateStudentDetails(student);
+            if (dropDownListProgramme_update.Text == "")
+            {
+                MessageBox.Show("Select Programme");
+                return;
+            }
+            if (dropDownListCohort_update.Text == "")
+            {
+                MessageBox.Show("Select Cohort");
+                return;
+            }
+            if (dropDownlistIndex_update.Text == "")
+            {
+                MessageBox.Show("Select Index");
+                return;
+            }
+
+            if (!reg.IsMatch(emailAddress_update.Text))
+            {
+                MessageBox.Show("Invalid Email Address");
+                return;
+            }
+
+            if (contactNumber_update.Text == "")
+            {
+                contactNumber_update.Text = "0";
+            }
+                GetStudentDetails(student);
+                UpdateStudentDetails(student);
 
             
         }
@@ -294,6 +330,21 @@ namespace StudentMarkingSystem.UIComponent.Admin
 
         private void ButtonDeleteStudentDetails_Click(object sender, EventArgs e)
         {
+            if (dropDownListProgramme_update.Text == "")
+            {
+                MessageBox.Show("Select Programme");
+                return;
+            }
+            if (dropDownListCohort_update.Text == "")
+            {
+                MessageBox.Show("Select Cohort");
+                return;
+            }
+            if (dropDownlistIndex_update.Text == "")
+            {
+                MessageBox.Show("Select Index");
+                return;
+            }
             DeleteStudentDetails(student);
         }
 
