@@ -152,7 +152,10 @@
   <ItemGroup>
     <None Include="Resources\University_of_Technology_Mauritius_Logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DBscript\CreateDatabase.sql" />
+    <Content Include="DBscript\CreateTables.sql" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UserProfileIcon.bmp" />
   </ItemGroup>
