@@ -32,8 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ButtonDeleteProgramme = new System.Windows.Forms.Button();
             this.ButtonUpdate = new System.Windows.Forms.Button();
-            this.TextboxDescription = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TextboxDuration = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,8 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ButtonAddProgram = new System.Windows.Forms.Button();
-            this.TextboxAddDescription = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.TextboxAddDuration = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -72,8 +68,6 @@
             // 
             this.groupBox1.Controls.Add(this.ButtonDeleteProgramme);
             this.groupBox1.Controls.Add(this.ButtonUpdate);
-            this.groupBox1.Controls.Add(this.TextboxDescription);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.TextboxDuration);
             this.groupBox1.Controls.Add(this.label4);
@@ -83,14 +77,14 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(16, 65);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(245, 222);
+            this.groupBox1.Size = new System.Drawing.Size(245, 157);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update/Delete programme";
             // 
             // ButtonDeleteProgramme
             // 
-            this.ButtonDeleteProgramme.Location = new System.Drawing.Point(89, 183);
+            this.ButtonDeleteProgramme.Location = new System.Drawing.Point(89, 115);
             this.ButtonDeleteProgramme.Name = "ButtonDeleteProgramme";
             this.ButtonDeleteProgramme.Size = new System.Drawing.Size(75, 23);
             this.ButtonDeleteProgramme.TabIndex = 10;
@@ -100,30 +94,13 @@
             // 
             // ButtonUpdate
             // 
-            this.ButtonUpdate.Location = new System.Drawing.Point(164, 183);
+            this.ButtonUpdate.Location = new System.Drawing.Point(164, 115);
             this.ButtonUpdate.Name = "ButtonUpdate";
             this.ButtonUpdate.Size = new System.Drawing.Size(75, 23);
             this.ButtonUpdate.TabIndex = 9;
             this.ButtonUpdate.Text = "Update";
             this.ButtonUpdate.UseVisualStyleBackColor = true;
             this.ButtonUpdate.Click += new System.EventHandler(this.ButtonUpdate_Click);
-            // 
-            // TextboxDescription
-            // 
-            this.TextboxDescription.Location = new System.Drawing.Point(89, 102);
-            this.TextboxDescription.Multiline = true;
-            this.TextboxDescription.Name = "TextboxDescription";
-            this.TextboxDescription.Size = new System.Drawing.Size(150, 75);
-            this.TextboxDescription.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 105);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Description";
             // 
             // label5
             // 
@@ -188,8 +165,6 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.ButtonAddProgram);
-            this.groupBox2.Controls.Add(this.TextboxAddDescription);
-            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.TextboxAddDuration);
             this.groupBox2.Controls.Add(this.label9);
@@ -197,37 +172,20 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Location = new System.Drawing.Point(267, 65);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(252, 222);
+            this.groupBox2.Size = new System.Drawing.Size(252, 157);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Programme";
             // 
             // ButtonAddProgram
             // 
-            this.ButtonAddProgram.Location = new System.Drawing.Point(164, 156);
+            this.ButtonAddProgram.Location = new System.Drawing.Point(154, 115);
             this.ButtonAddProgram.Name = "ButtonAddProgram";
             this.ButtonAddProgram.Size = new System.Drawing.Size(75, 23);
             this.ButtonAddProgram.TabIndex = 17;
             this.ButtonAddProgram.Text = "Add";
             this.ButtonAddProgram.UseVisualStyleBackColor = true;
             this.ButtonAddProgram.Click += new System.EventHandler(this.ButtonAddProgram_Click);
-            // 
-            // TextboxAddDescription
-            // 
-            this.TextboxAddDescription.Location = new System.Drawing.Point(89, 75);
-            this.TextboxAddDescription.Multiline = true;
-            this.TextboxAddDescription.Name = "TextboxAddDescription";
-            this.TextboxAddDescription.Size = new System.Drawing.Size(150, 75);
-            this.TextboxAddDescription.TabIndex = 16;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 78);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Description";
             // 
             // label8
             // 
@@ -273,7 +231,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.GridViewProgramme);
-            this.groupBox3.Location = new System.Drawing.Point(16, 293);
+            this.groupBox3.Location = new System.Drawing.Point(16, 228);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(503, 151);
             this.groupBox3.TabIndex = 7;
@@ -321,8 +279,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button ButtonDeleteProgramme;
         private System.Windows.Forms.Button ButtonUpdate;
-        private System.Windows.Forms.TextBox TextboxDescription;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TextboxDuration;
         private System.Windows.Forms.Label label4;
@@ -332,8 +288,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button ButtonAddProgram;
-        private System.Windows.Forms.TextBox TextboxAddDescription;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox TextboxAddDuration;
         private System.Windows.Forms.Label label9;

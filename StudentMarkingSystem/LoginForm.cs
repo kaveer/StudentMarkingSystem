@@ -28,8 +28,9 @@ namespace StudentMarkingSystem
             try
             {
                 UserViewModel user = new UserViewModel();
-                if (MapViewModel(user) == false)
+                if (Isvalid(user) == false)
                     return;
+
                 RetrieveUser(user);
             }
             catch (Exception ex)
@@ -47,7 +48,7 @@ namespace StudentMarkingSystem
             com.Parameters.Add(new SqlParameter("@EmailAddress", user.EmailAddress));
             com.Parameters.Add(new SqlParameter("@Password", user.UserPassword));
             com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "Login";
+            com.CommandText = "login";
             SqlDataAdapter adapter = new SqlDataAdapter(com);
             adapter.Fill(dataSet);
 
@@ -73,9 +74,9 @@ namespace StudentMarkingSystem
         {
             user.UserId = Convert.ToInt32(row["UserId"]);
             user.UserInfoId = Convert.ToInt32(row["UserInfoId"]);
-            user.UserFirstName = row["UserFirstName"].ToString();
-            user.UserLastName = row["UserLastName"].ToString();
-            user.EmailAddress = row["EmailAddress"].ToString();
+            user.UserFirstName = row["firstname"].ToString();
+            user.UserLastName = row["lastname"].ToString();
+            user.EmailAddress = row["email"].ToString();
             user.UserAddress = row["UserAddress"].ToString();
             user.Contact = Convert.ToInt32(row["Contact"]);
             user.UserPassword = row["UserPassword"].ToString();
@@ -83,7 +84,7 @@ namespace StudentMarkingSystem
             user.UserType = row["UserType"].ToString();
         }
 
-        public bool MapViewModel(UserViewModel user)
+        public bool Isvalid(UserViewModel user)
         {
             Regex reg = new Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
 

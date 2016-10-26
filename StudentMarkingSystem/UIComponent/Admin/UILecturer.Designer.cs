@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.BtnDeleteLecturer = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BtnAddLecturer = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.TxtContact = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.TxtAddress = new System.Windows.Forms.TextBox();
             this.TxtFirstName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TxtLastName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TxtEmail = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtAddress = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TxtPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TxtContact = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.BtnDeleteLecturer = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TxtPassword = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtEmail = new System.Windows.Forms.TextBox();
+            this.BtnAddLecturer = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -66,7 +66,35 @@
             this.groupBox1.Size = new System.Drawing.Size(236, 90);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Delete/update Lecturer";
+            this.groupBox1.Text = "Delete Lecturer";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(47, 16);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(180, 21);
+            this.comboBox1.TabIndex = 21;
+            // 
+            // BtnDeleteLecturer
+            // 
+            this.BtnDeleteLecturer.Location = new System.Drawing.Point(152, 60);
+            this.BtnDeleteLecturer.Name = "BtnDeleteLecturer";
+            this.BtnDeleteLecturer.Size = new System.Drawing.Size(75, 23);
+            this.BtnDeleteLecturer.TabIndex = 19;
+            this.BtnDeleteLecturer.Text = "Delete";
+            this.BtnDeleteLecturer.UseVisualStyleBackColor = true;
+            this.BtnDeleteLecturer.Click += new System.EventHandler(this.BtnDeleteLecturer_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Name";
             // 
             // groupBox2
             // 
@@ -79,127 +107,6 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Lecturer";
-            // 
-            // BtnAddLecturer
-            // 
-            this.BtnAddLecturer.Location = new System.Drawing.Point(209, 286);
-            this.BtnAddLecturer.Name = "BtnAddLecturer";
-            this.BtnAddLecturer.Size = new System.Drawing.Size(75, 23);
-            this.BtnAddLecturer.TabIndex = 0;
-            this.BtnAddLecturer.Text = "Add";
-            this.BtnAddLecturer.UseVisualStyleBackColor = true;
-            this.BtnAddLecturer.Click += new System.EventHandler(this.BtnAddLecturer_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "First Name";
-            // 
-            // TxtFirstName
-            // 
-            this.TxtFirstName.Location = new System.Drawing.Point(105, 23);
-            this.TxtFirstName.Name = "TxtFirstName";
-            this.TxtFirstName.Size = new System.Drawing.Size(153, 20);
-            this.TxtFirstName.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Last name";
-            // 
-            // TxtLastName
-            // 
-            this.TxtLastName.Location = new System.Drawing.Point(105, 50);
-            this.TxtLastName.Name = "TxtLastName";
-            this.TxtLastName.Size = new System.Drawing.Size(153, 20);
-            this.TxtLastName.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Email  Address";
-            // 
-            // TxtEmail
-            // 
-            this.TxtEmail.Location = new System.Drawing.Point(104, 26);
-            this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(153, 20);
-            this.TxtEmail.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 79);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Address";
-            // 
-            // TxtAddress
-            // 
-            this.TxtAddress.Location = new System.Drawing.Point(105, 76);
-            this.TxtAddress.Name = "TxtAddress";
-            this.TxtAddress.Size = new System.Drawing.Size(153, 20);
-            this.TxtAddress.TabIndex = 8;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.TxtConfirmPassword);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.TxtPassword);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.TxtEmail);
-            this.groupBox3.Location = new System.Drawing.Point(6, 19);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(278, 111);
-            this.groupBox3.TabIndex = 9;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Credentials";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Password";
-            // 
-            // TxtPassword
-            // 
-            this.TxtPassword.Location = new System.Drawing.Point(104, 52);
-            this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(153, 20);
-            this.TxtPassword.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 78);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Confirm Password";
-            // 
-            // TxtConfirmPassword
-            // 
-            this.TxtConfirmPassword.Location = new System.Drawing.Point(104, 75);
-            this.TxtConfirmPassword.Name = "TxtConfirmPassword";
-            this.TxtConfirmPassword.Size = new System.Drawing.Size(153, 20);
-            this.TxtConfirmPassword.TabIndex = 10;
             // 
             // groupBox4
             // 
@@ -218,6 +125,13 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Other Details";
             // 
+            // TxtContact
+            // 
+            this.TxtContact.Location = new System.Drawing.Point(105, 104);
+            this.TxtContact.Name = "TxtContact";
+            this.TxtContact.Size = new System.Drawing.Size(152, 20);
+            this.TxtContact.TabIndex = 10;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -227,39 +141,126 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "Contact";
             // 
-            // TxtContact
+            // label1
             // 
-            this.TxtContact.Location = new System.Drawing.Point(105, 104);
-            this.TxtContact.Name = "TxtContact";
-            this.TxtContact.Size = new System.Drawing.Size(152, 20);
-            this.TxtContact.TabIndex = 10;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "First Name";
             // 
-            // label9
+            // TxtAddress
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "Name";
+            this.TxtAddress.Location = new System.Drawing.Point(105, 76);
+            this.TxtAddress.Name = "TxtAddress";
+            this.TxtAddress.Size = new System.Drawing.Size(153, 20);
+            this.TxtAddress.TabIndex = 8;
             // 
-            // BtnDeleteLecturer
+            // TxtFirstName
             // 
-            this.BtnDeleteLecturer.Location = new System.Drawing.Point(152, 60);
-            this.BtnDeleteLecturer.Name = "BtnDeleteLecturer";
-            this.BtnDeleteLecturer.Size = new System.Drawing.Size(75, 23);
-            this.BtnDeleteLecturer.TabIndex = 19;
-            this.BtnDeleteLecturer.Text = "Delete";
-            this.BtnDeleteLecturer.UseVisualStyleBackColor = true;
+            this.TxtFirstName.Location = new System.Drawing.Point(105, 23);
+            this.TxtFirstName.Name = "TxtFirstName";
+            this.TxtFirstName.Size = new System.Drawing.Size(153, 20);
+            this.TxtFirstName.TabIndex = 2;
             // 
-            // comboBox1
+            // label4
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(47, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(180, 21);
-            this.comboBox1.TabIndex = 21;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(7, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Address";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Last name";
+            // 
+            // TxtLastName
+            // 
+            this.TxtLastName.Location = new System.Drawing.Point(105, 50);
+            this.TxtLastName.Name = "TxtLastName";
+            this.TxtLastName.Size = new System.Drawing.Size(153, 20);
+            this.TxtLastName.TabIndex = 4;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.TxtConfirmPassword);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.TxtPassword);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.TxtEmail);
+            this.groupBox3.Location = new System.Drawing.Point(6, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(278, 111);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Credentials";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 78);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(91, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Confirm Password";
+            // 
+            // TxtConfirmPassword
+            // 
+            this.TxtConfirmPassword.Location = new System.Drawing.Point(104, 75);
+            this.TxtConfirmPassword.Name = "TxtConfirmPassword";
+            this.TxtConfirmPassword.Size = new System.Drawing.Size(153, 20);
+            this.TxtConfirmPassword.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 52);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Password";
+            // 
+            // TxtPassword
+            // 
+            this.TxtPassword.Location = new System.Drawing.Point(104, 52);
+            this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.Size = new System.Drawing.Size(153, 20);
+            this.TxtPassword.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Email  Address";
+            // 
+            // TxtEmail
+            // 
+            this.TxtEmail.Location = new System.Drawing.Point(104, 26);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(153, 20);
+            this.TxtEmail.TabIndex = 6;
+            // 
+            // BtnAddLecturer
+            // 
+            this.BtnAddLecturer.Location = new System.Drawing.Point(209, 286);
+            this.BtnAddLecturer.Name = "BtnAddLecturer";
+            this.BtnAddLecturer.Size = new System.Drawing.Size(75, 23);
+            this.BtnAddLecturer.TabIndex = 0;
+            this.BtnAddLecturer.Text = "Add";
+            this.BtnAddLecturer.UseVisualStyleBackColor = true;
+            this.BtnAddLecturer.Click += new System.EventHandler(this.BtnAddLecturer_Click);
             // 
             // UILecturer
             // 
@@ -269,13 +270,14 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "UILecturer";
             this.Size = new System.Drawing.Size(613, 367);
+            this.Load += new System.EventHandler(this.UILecturer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -46,8 +46,8 @@ namespace StudentMarkingSystem.UIComponent.Admin
 
             foreach (DataRow row in dataSet.Tables[0].Rows)
             {
-                DDLProgramme.Items.Add(row["ProgramName"].ToString());
-                DDLAddProgramme.Items.Add(row["ProgramName"].ToString());
+                DDLProgramme.Items.Add(row["Programme"].ToString());
+                DDLAddProgramme.Items.Add(row["Programme"].ToString());
             }
         }
 
@@ -101,7 +101,7 @@ namespace StudentMarkingSystem.UIComponent.Admin
             foreach (DataRow row in dataSet.Tables[0].Rows)
             {
                 cohort.CohortId = Convert.ToInt32(row["CohortId"]);
-                cohort.ProgramId = Convert.ToInt32(row["ProgramId"]);
+                cohort.ProgramId = Convert.ToInt32(row["ProgrammeId"]);
                 TxtBxCohortName.Text = cohort.Cohort = row["Cohort"].ToString();
                 cohort.CohortStatus = row["CohortStatus"].ToString();
             }
@@ -176,7 +176,7 @@ namespace StudentMarkingSystem.UIComponent.Admin
 
         private void RetrieveProgramByName(DataRow row, CohortViewModel cohort)
         {
-            cohort.ProgramId = Convert.ToInt32(row["ProgramId"]);
+            cohort.ProgramId = Convert.ToInt32(row["ProgrammeId"]);
         }
 
         private void ButtonUpdate_Click(object sender, EventArgs e)

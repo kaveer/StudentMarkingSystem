@@ -167,5 +167,27 @@ namespace StudentMarkingSystem.UIComponent.Admin
             user.UserStatus = "active";
             user.UserType = "lecturer";
         }
+
+        private void BtnDeleteLecturer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UILecturer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void RetrieveUser()
+        {
+            DbConfiguration configuration = new DbConfiguration();
+            SqlCommand com = new SqlCommand();
+            DataSet dataSet = new DataSet();
+            com.Connection = new SqlConnection(configuration.GetConnectionString());
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "RetrieveUser";
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dataSet);
+        }
     }
 }

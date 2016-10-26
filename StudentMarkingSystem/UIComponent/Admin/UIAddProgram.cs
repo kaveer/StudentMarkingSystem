@@ -50,7 +50,7 @@ namespace StudentMarkingSystem.UIComponent.Admin
 
             foreach (DataRow row in dataSet.Tables[0].Rows)
             {
-                DropDownListProgramme.Items.Add(row["ProgramName"].ToString());
+                DropDownListProgramme.Items.Add(row["Programme"].ToString());
             }
         }
 
@@ -58,7 +58,7 @@ namespace StudentMarkingSystem.UIComponent.Admin
         {
             GridViewProgramme.DataSource = table;
             GridViewProgramme.Columns[0].Visible = false;
-            GridViewProgramme.Columns[4].Visible = false;
+            GridViewProgramme.Columns[3].Visible = false;
             //dataGridView1.DataBindings.ToString();
         }
 
@@ -90,11 +90,10 @@ namespace StudentMarkingSystem.UIComponent.Admin
 
         private void RetrieveProgramByName(DataRow row, ProgramViewModel program)
         {
-            program.ProgramId = Convert.ToInt32(row["ProgramId"]);
-            TextboxProgramName.Text = program.ProgramName = row["ProgramName"].ToString();
-            TextboxDuration.Text = Convert.ToString(program.ProgramDuration = Convert.ToInt32(row["Duration"]));
-            TextboxDescription.Text =  program.ProgramDescription = row["ProgramDescription"].ToString();
-            program.ProgramStatus = row["ProgramStatus"].ToString();     
+            program.ProgramId = Convert.ToInt32(row["ProgrammeId"]);
+            TextboxProgramName.Text = program.ProgramName = row["Programme"].ToString();
+            TextboxDuration.Text = Convert.ToString(program.ProgramDuration = Convert.ToInt32(row["duration"]));
+            program.ProgramStatus = row["ProgrammeStatus"].ToString();     
         }
 
         private void ButtonUpdate_Click(object sender, EventArgs e)
@@ -113,7 +112,6 @@ namespace StudentMarkingSystem.UIComponent.Admin
         {
             program.ProgramName = TextboxProgramName.Text;
             program.ProgramDuration = Convert.ToInt32(TextboxDuration.Text);
-            program.ProgramDescription = TextboxDescription.Text;
 
             DbConfiguration configuration = new DbConfiguration();
             SqlCommand com = new SqlCommand();
@@ -122,7 +120,6 @@ namespace StudentMarkingSystem.UIComponent.Admin
             com.Parameters.Add(new SqlParameter("@programId", program.ProgramId));
             com.Parameters.Add(new SqlParameter("@programName", program.ProgramName));
             com.Parameters.Add(new SqlParameter("@programDuration", program.ProgramDuration));
-            com.Parameters.Add(new SqlParameter("@programDescrip", program.ProgramDescription));
             com.CommandType = CommandType.StoredProcedure;
             com.CommandText = "UpdateProgramById";
             SqlDataAdapter adapter = new SqlDataAdapter(com);
@@ -165,7 +162,6 @@ namespace StudentMarkingSystem.UIComponent.Admin
             DropDownListProgramme.Items.Clear();
             TextboxProgramName.Text = "";
             TextboxDuration.Text = "";
-            TextboxDescription.Text = "";
         }
 
         private void ButtonAddProgram_Click(object sender, EventArgs e)
@@ -184,8 +180,7 @@ namespace StudentMarkingSystem.UIComponent.Admin
             DataSet dataSet = new DataSet();
             com.Connection = new SqlConnection(configuration.GetConnectionString());
             com.Parameters.Add(new SqlParameter("@name", TextboxAddName.Text));
-            com.Parameters.Add(new SqlParameter("@descrip", TextboxAddDescription.Text));
-            com.Parameters.Add(new SqlParameter("@duration", TextboxAddDuration.Text));
+            com.Parameters.Add(new SqlParameter("@duration", Convert.ToInt32(TextboxAddDuration.Text)));
             com.CommandType = CommandType.StoredProcedure;
             com.CommandText = "AddProgram";
             SqlDataAdapter adapter = new SqlDataAdapter(com);

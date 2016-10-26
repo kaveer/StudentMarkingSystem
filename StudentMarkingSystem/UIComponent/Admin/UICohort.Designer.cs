@@ -161,7 +161,7 @@
             this.groupBox2.Size = new System.Drawing.Size(288, 148);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Update/Delete Cohort";
+            this.groupBox2.Text = "Add Cohort";
             // 
             // BtnAddCohort
             // 
