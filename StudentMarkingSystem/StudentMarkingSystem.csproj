@@ -160,15 +160,19 @@
     <Content Include="DBscript\CreateDatabase.sql" />
     <Content Include="DBscript\CreateTables.sql" />
     <Content Include="DBscript\DeleteCohort.sql" />
+    <Content Include="DBscript\DeleteLecturer.sql" />
     <Content Include="DBscript\DeleteProgramById.sql" />
     <Content Include="DBscript\login.sql" />
     <Content Include="DBscript\RetrieveCohortByCohortName.sql" />
     <Content Include="DBscript\RetrieveCohortByProgrammeName.sql" />
+    <Content Include="DBscript\RetrieveLecturerIdByName.sql" />
     <Content Include="DBscript\RetrieveProgram.sql" />
     <Content Include="DBscript\RetrieveProgramByName.sql" />
+    <Content Include="DBscript\RetrieveUser.sql" />
     <Content Include="DBscript\RetrieveUserIdByEmail.sql" />
     <Content Include="DBscript\UpdateCohort.sql" />
     <Content Include="DBscript\UpdateProgramById.sql" />
+    <Content Include="DBscript\ValidateEmailForUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UserProfileIcon.bmp" />

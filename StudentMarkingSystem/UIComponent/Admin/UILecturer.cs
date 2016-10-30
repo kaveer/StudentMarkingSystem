@@ -49,6 +49,9 @@ namespace StudentMarkingSystem.UIComponent.Admin
             RetrieveUserId(user);
             AddUserInfo(user);
 
+            var users = this.RetrieveUser();
+            DisplayLecturer(users);
+
 
         }
 
@@ -168,26 +171,108 @@ namespace StudentMarkingSystem.UIComponent.Admin
             user.UserType = "lecturer";
         }
 
-        private void BtnDeleteLecturer_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void UILecturer_Load(object sender, EventArgs e)
         {
-
+            var users = this.RetrieveUser();
+            DisplayLecturer(users);
         }
 
-        public void RetrieveUser()
+        private void DisplayLecturer(IEnumerable<UserViewModel> users)
+        {
+            DDLdiaplayUser.Items.Clear();
+
+            foreach(var user in users)
+            {
+                DDLdiaplayUser.Items.Add(user.UserFirstName + " " + user.UserLastName);
+            }
+        }
+
+        private void BtnDeleteLecturer_Click(object sender, EventArgs e)
+        {
+            if(DDLdiaplayUser.Text == "")
+            {
+                MessageBox.Show("Select a lecturer to delete");
+                return;
+            }
+            string fullName = DDLdiaplayUser.SelectedItem.ToString();
+
+            RetrieveLecturerIdByName(fullName , user);
+        }
+
+        private void RetrieveLecturerIdByName(string fullName, UserViewModel user)
+        {
+            string[] name = fullName.Split(' ');
+            user.UserFirstName = name[0];
+            user.UserLastName = name[1];
+
+            DbConfiguration configuration = new DbConfiguration();
+            SqlCommand com = new SqlCommand();
+            DataSet dataSet = new DataSet();
+            com.Connection = new SqlConnection(configuration.GetConnectionString());
+            com.Parameters.Add(new SqlParameter("@firstname", user.UserFirstName));
+            com.Parameters.Add(new SqlParameter("@lastname", user.UserLastName));
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "RetrieveLecturerIdByName";
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dataSet);
+
+            if(dataSet.Tables[0].Rows.Count > 0)
+            {
+                foreach(DataRow row in dataSet.Tables[0].Rows)
+                {
+                    user.UserId = Convert.ToInt32(row["userId"].ToString());
+                    deleteLecturerByUserId(user);
+                }
+            }
+        }
+
+        private void deleteLecturerByUserId(UserViewModel user)
+        {
+            DbConfiguration configuration = new DbConfiguration();
+            SqlCommand com = new SqlCommand();
+            DataSet dataSet = new DataSet();
+            com.Connection = new SqlConnection(configuration.GetConnectionString());
+            com.Parameters.Add(new SqlParameter("@userId", user.UserId));
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "DeleteLecturer";
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dataSet);
+
+            MessageBox.Show("Lecturer removed");
+
+            DDLdiaplayUser.Items.Clear();
+            var users = this.RetrieveUser();
+            DisplayLecturer(users);
+        }
+
+        public IEnumerable<UserViewModel> RetrieveUser()
         {
             DbConfiguration configuration = new DbConfiguration();
             SqlCommand com = new SqlCommand();
             DataSet dataSet = new DataSet();
             com.Connection = new SqlConnection(configuration.GetConnectionString());
             com.CommandType = CommandType.StoredProcedure;
-            com.CommandText = "RetrieveUser";
+            com.CommandText = "RetrieveLecturer";
             SqlDataAdapter adapter = new SqlDataAdapter(com);
             adapter.Fill(dataSet);
+            var row = dataSet.Tables[0].Rows;
+
+            List<UserViewModel> user = new List<UserViewModel>();
+
+            foreach (DataRow item in row)
+            {
+                UserViewModel lecturer = new UserViewModel()
+                {
+                    UserId = Convert.ToInt32((item["userid"].ToString())),
+                    UserFirstName = item["firstname"].ToString(),
+                    UserLastName = item["lastname"].ToString()
+                };
+                user.Add(lecturer);
+            }
+
+            return user;
         }
     }
 }

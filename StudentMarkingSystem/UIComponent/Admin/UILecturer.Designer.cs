@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.DDLdiaplayUser = new System.Windows.Forms.ComboBox();
             this.BtnDeleteLecturer = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -58,7 +58,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.DDLdiaplayUser);
             this.groupBox1.Controls.Add(this.BtnDeleteLecturer);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Location = new System.Drawing.Point(333, 25);
@@ -68,14 +68,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Delete Lecturer";
             // 
-            // comboBox1
+            // DDLdiaplayUser
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(47, 16);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(180, 21);
-            this.comboBox1.TabIndex = 21;
+            this.DDLdiaplayUser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.DDLdiaplayUser.FormattingEnabled = true;
+            this.DDLdiaplayUser.Location = new System.Drawing.Point(47, 16);
+            this.DDLdiaplayUser.Name = "DDLdiaplayUser";
+            this.DDLdiaplayUser.Size = new System.Drawing.Size(180, 21);
+            this.DDLdiaplayUser.TabIndex = 21;
             // 
             // BtnDeleteLecturer
             // 
@@ -301,7 +301,7 @@
         private System.Windows.Forms.TextBox TxtPassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtEmail;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox DDLdiaplayUser;
         private System.Windows.Forms.Button BtnDeleteLecturer;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox TxtContact;
