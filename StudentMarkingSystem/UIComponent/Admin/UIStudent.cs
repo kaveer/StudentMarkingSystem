@@ -9,7 +9,7 @@ using StudentMarkingSystem.Repository;
 namespace StudentMarkingSystem.UIComponent.Admin
 {
     public partial class UIStudent : UserControl
-    {   todo: update and delete button;
+    {   
         Regex reg = new Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
 
         string programmeName;

@@ -163,6 +163,7 @@
     <Content Include="DBscript\DeleteCohort.sql" />
     <Content Include="DBscript\DeleteLecturer.sql" />
     <Content Include="DBscript\DeleteProgramById.sql" />
+    <Content Include="DBscript\DeleteStudentByIndex.sql" />
     <Content Include="DBscript\login.sql" />
     <Content Include="DBscript\RetrieveCohortByCohortName.sql" />
     <Content Include="DBscript\RetrieveCohortByProgrammeName.sql" />
@@ -175,6 +176,7 @@
     <Content Include="DBscript\RetrieveUserIdByEmail.sql" />
     <Content Include="DBscript\UpdateCohort.sql" />
     <Content Include="DBscript\UpdateProgramById.sql" />
+    <Content Include="DBscript\UpdateStudentByIndex.sql" />
     <Content Include="DBscript\ValidateEmailForUser.sql" />
   </ItemGroup>
   <ItemGroup>
