@@ -155,6 +155,7 @@
   <ItemGroup>
     <Content Include="DBscript\AddCohort.sql" />
     <Content Include="DBscript\AddProgram.sql" />
+    <Content Include="DBscript\AddStudent.sql" />
     <Content Include="DBscript\AddUserCredential.sql" />
     <Content Include="DBscript\AddUserInfo.sql" />
     <Content Include="DBscript\CreateDatabase.sql" />
@@ -168,6 +169,8 @@
     <Content Include="DBscript\RetrieveLecturerIdByName.sql" />
     <Content Include="DBscript\RetrieveProgram.sql" />
     <Content Include="DBscript\RetrieveProgramByName.sql" />
+    <Content Include="DBscript\RetrieveStudentDetailsByCohortName.sql" />
+    <Content Include="DBscript\RetrieveStudentDetailsByIndex.sql" />
     <Content Include="DBscript\RetrieveUser.sql" />
     <Content Include="DBscript\RetrieveUserIdByEmail.sql" />
     <Content Include="DBscript\UpdateCohort.sql" />

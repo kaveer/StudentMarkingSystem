@@ -9,7 +9,7 @@ using StudentMarkingSystem.Repository;
 namespace StudentMarkingSystem.UIComponent.Admin
 {
     public partial class UIStudent : UserControl
-    {
+    {   todo: update and delete button;
         Regex reg = new Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
 
         string programmeName;
@@ -47,8 +47,8 @@ namespace StudentMarkingSystem.UIComponent.Admin
 
             foreach (DataRow row in dataSet.Tables[0].Rows)
             {
-                DDLAddProgramme.Items.Add(row["ProgramName"].ToString());
-                dropDownListProgramme_update.Items.Add(row["ProgramName"].ToString());
+                DDLAddProgramme.Items.Add(row["Programme"].ToString());
+                dropDownListProgramme_update.Items.Add(row["Programme"].ToString());
             }
         }
 
@@ -236,7 +236,7 @@ namespace StudentMarkingSystem.UIComponent.Admin
             index = dropDownlistIndex_update.SelectedItem.ToString();
             RetriveStudentDetailsByIndex(cohortName, programmeName, index , student);
         }
-
+        
         private void RetriveStudentDetailsByIndex(string cohortName, string programmeName, string index , StudentViewModel student)
         {
             DbConfiguration configuration = new DbConfiguration();
@@ -253,11 +253,11 @@ namespace StudentMarkingSystem.UIComponent.Admin
 
             foreach (DataRow row in dataSet.Tables[0].Rows)
             {
-              student.StudentFirstname =  studentFirstName_update.Text = row["StudentFirstname"].ToString();
-              student.StudentLastname=  studentLastName_update.Text = row["StudentLastname"].ToString();
-              student.StudentEmail =  emailAddress_update.Text = row["StudentEmail"].ToString();
+              student.StudentFirstname =  studentFirstName_update.Text = row["Firstname"].ToString();
+              student.StudentLastname=  studentLastName_update.Text = row["Lastname"].ToString();
+              student.StudentEmail =  emailAddress_update.Text = row["Email"].ToString();
               student.StudentAddress =  studentAddress_update.Text = row["StudentAddress"].ToString();
-              student.StudentContact = Convert.ToInt32( contactNumber_update.Text = row["StudentContact"].ToString());
+              student.StudentContact = Convert.ToInt32( contactNumber_update.Text = row["Contact"].ToString());
               student.IndexNo = index;
               student.StudentStatus = row["StudentStatus"].ToString();
               student.CohortId = Convert.ToInt32(row["CohortId"]);
