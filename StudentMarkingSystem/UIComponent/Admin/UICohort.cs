@@ -59,6 +59,8 @@ namespace StudentMarkingSystem.UIComponent.Admin
 
         private void RetrieveCohortByProgrammeName(CohortViewModel cohort , string programmeName)
         {
+            DDLCohort.Items.Clear();
+
             DbConfiguration configuration = new DbConfiguration();
             SqlCommand com = new SqlCommand();
             DataSet dataSet = new DataSet();

@@ -17,6 +17,7 @@ namespace StudentMarkingSystem.Forms
         UICohort cohort = new UICohort();
         UIStudent student = new UIStudent();
         UILecturer lecturer = new UILecturer();
+        UIModule module = new UIModule();
 
         public AdminHomeForm()
         {
@@ -51,6 +52,12 @@ namespace StudentMarkingSystem.Forms
         {
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(lecturer);
+        }
+
+        private void BtnModuleManagment_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(module);
         }
     }
 }

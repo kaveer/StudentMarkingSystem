@@ -18,6 +18,7 @@ namespace StudentMarkingSystem
     public partial class LoginForm : Form
     {
         public static string userName;
+        public static int userId;
         public LoginForm()
         {
             InitializeComponent();
@@ -122,6 +123,7 @@ namespace StudentMarkingSystem
         public void CheckType(UserViewModel user)
         {
             userName = user.UserFirstName + " " + user.UserLastName;
+            userId = user.UserId;
 
             if (user.UserType == "admin")
             {

@@ -76,6 +76,7 @@
     <Compile Include="Models\CohortViewModel.cs" />
     <Compile Include="Models\LecturerViewModel.cs" />
     <Compile Include="Models\ProgramViewModel.cs" />
+    <Compile Include="Models\ModuleViewModel.cs" />
     <Compile Include="Models\StudentViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,6 +101,12 @@
     <Compile Include="UIComponent\Admin\UILecturer.Designer.cs">
       <DependentUpon>UILecturer.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIComponent\Admin\UIModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIComponent\Admin\UIModule.Designer.cs">
+      <DependentUpon>UIModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIComponent\Admin\UIStudent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -108,6 +115,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\AdminHomeForm.resx">
       <DependentUpon>AdminHomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LecturerHomeForm.resx">
+      <DependentUpon>LecturerHomeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -130,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UIComponent\Admin\UILecturer.resx">
       <DependentUpon>UILecturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIComponent\Admin\UIModule.resx">
+      <DependentUpon>UIModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UIComponent\Admin\UIStudent.resx">
       <DependentUpon>UIStudent.cs</DependentUpon>
@@ -154,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DBscript\AddCohort.sql" />
+    <Content Include="DBscript\AddModule.sql" />
     <Content Include="DBscript\AddProgram.sql" />
     <Content Include="DBscript\AddStudent.sql" />
     <Content Include="DBscript\AddUserCredential.sql" />
@@ -168,6 +182,7 @@
     <Content Include="DBscript\RetrieveCohortByCohortName.sql" />
     <Content Include="DBscript\RetrieveCohortByProgrammeName.sql" />
     <Content Include="DBscript\RetrieveLecturerIdByName.sql" />
+    <Content Include="DBscript\RetrieveModuleByCohortName.sql" />
     <Content Include="DBscript\RetrieveProgram.sql" />
     <Content Include="DBscript\RetrieveProgramByName.sql" />
     <Content Include="DBscript\RetrieveStudentDetailsByCohortName.sql" />

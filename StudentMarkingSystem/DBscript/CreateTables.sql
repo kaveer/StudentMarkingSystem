@@ -85,3 +85,10 @@ CREATE TABLE historyTable
  HistoryDescrition NVARCHAR(100) ,
  historyStatus     NVARCHAR(10)
 );
+
+CREATE TABLE StudentModuleLine(
+	studentModuleId int PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	moduleId int NULL,
+	studentId int NULL,
+	studentModuleStatus nvarchar(50) NULL,
+);

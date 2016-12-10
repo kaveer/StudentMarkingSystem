@@ -16,5 +16,10 @@ namespace StudentMarkingSystem.Forms
         {
             InitializeComponent();
         }
+
+        private void LecturerHomeForm_Load(object sender, EventArgs e)
+        {
+            username_label.Text = LoginForm.userName;
+        }
     }
 }
