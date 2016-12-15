@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.EmailAddressTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextbox = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LoginButton
@@ -78,11 +79,22 @@
             this.PasswordTextbox.Size = new System.Drawing.Size(158, 20);
             this.PasswordTextbox.TabIndex = 4;
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(116, 176);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.PasswordTextbox);
             this.Controls.Add(this.EmailAddressTextBox);
             this.Controls.Add(this.label2);
@@ -103,5 +115,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox EmailAddressTextBox;
         private System.Windows.Forms.TextBox PasswordTextbox;
+        private System.Windows.Forms.Button btnExit;
     }
 }

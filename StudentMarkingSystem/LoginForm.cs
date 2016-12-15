@@ -149,9 +149,16 @@ namespace StudentMarkingSystem
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            EmailAddressTextBox.Text = "kaveer.rajcoomar@gmail.com";
-            PasswordTextbox.Text = "kaveer";
+            //EmailAddressTextBox.Text = "kaveer.rajcoomar@gmail.com";
+            //PasswordTextbox.Text = "kaveer";
+
+            EmailAddressTextBox.Text = "lecturer@tester.com";
+            PasswordTextbox.Text = "kaveer3009";
         }
-       
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

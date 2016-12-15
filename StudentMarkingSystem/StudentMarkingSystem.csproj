@@ -113,6 +113,12 @@
     <Compile Include="UIComponent\Admin\UIStudent.Designer.cs">
       <DependentUpon>UIStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIComponent\Lecturer\UIGrade.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIComponent\Lecturer\UIGrade.Designer.cs">
+      <DependentUpon>UIGrade.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AdminHomeForm.resx">
       <DependentUpon>AdminHomeForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UIComponent\Admin\UIStudent.resx">
       <DependentUpon>UIStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UIComponent\Lecturer\UIGrade.resx">
+      <DependentUpon>UIGrade.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
