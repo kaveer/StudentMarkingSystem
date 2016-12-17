@@ -74,6 +74,8 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CohortViewModel.cs" />
+    <Compile Include="Models\GradeViewModel.cs" />
+    <Compile Include="Models\HistoryViewModel.cs" />
     <Compile Include="Models\LecturerViewModel.cs" />
     <Compile Include="Models\ProgramViewModel.cs" />
     <Compile Include="Models\ModuleViewModel.cs" />

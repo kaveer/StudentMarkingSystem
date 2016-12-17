@@ -17,6 +17,8 @@ namespace StudentMarkingSystem.UIComponent.Lecturer
     {
         CohortViewModel cohort = new CohortViewModel();
         ModuleViewModel module = new ModuleViewModel();
+        GradeViewModel grade = new GradeViewModel();
+        HistoryViewModel history = new HistoryViewModel();
 
         public UIGrade()
         {
@@ -26,6 +28,8 @@ namespace StudentMarkingSystem.UIComponent.Lecturer
         private void UIGrade_Load(object sender, EventArgs e)
         {
             RetrieveProgram();
+
+            grade.userId = LoginForm.userId;
         }
 
         public void RetrieveProgram()
@@ -89,6 +93,27 @@ namespace StudentMarkingSystem.UIComponent.Lecturer
         {
             string cohortName = DdlCohort.SelectedItem.ToString();
             GetModuleByCohortName(cohortName);
+            RetrieveStudentByCohortName(cohortName);
+        }
+
+        private void RetrieveStudentByCohortName(string cohortName)
+        {
+            DdlStudent.Items.Clear();
+
+            DbConfiguration configuration = new DbConfiguration();
+            SqlCommand com = new SqlCommand();
+            DataSet dataSet = new DataSet();
+            com.Connection = new SqlConnection(configuration.GetConnectionString());
+            com.Parameters.Add(new SqlParameter("@cohort", cohortName));
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "RetrieveStudentByCohortName";
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dataSet);
+
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                DdlStudent.Items.Add(row["firstname"] + " " + row["lastname"]);
+            }
         }
 
         private void GetModuleByCohortName(string cohortName)
@@ -108,6 +133,170 @@ namespace StudentMarkingSystem.UIComponent.Lecturer
             foreach (DataRow row in dataSet.Tables[0].Rows)
             {
                 DdlModule.Items.Add(row["name"]);
+            }
+        }
+
+        private void BtnAddGrade_Click(object sender, EventArgs e)
+        {
+            if (IsValid())
+            {
+                //TODO:change status to studentid and moduleid in grade table
+                SetText();
+                SaveGrade();
+                SaveHistory();
+                MessageBox.Show("Grade successfully saved");
+            }
+        }
+
+        private void SetText()
+        {
+            grade.grade = Convert.ToDecimal(txtbxGrade.Text);
+            grade.gradeStatus = "active";
+        }
+
+        private void SaveHistory()
+        {
+            SetHistoryModel();
+
+            DbConfiguration configuration = new DbConfiguration();
+            SqlCommand com = new SqlCommand();
+            DataSet dataSet = new DataSet();
+            com.Connection = new SqlConnection(configuration.GetConnectionString());
+            com.Parameters.Add(new SqlParameter("@moduleId", history.moduleId));
+            com.Parameters.Add(new SqlParameter("@historyDate", history.historyDate));
+            com.Parameters.Add(new SqlParameter("@historyDescription", history.historyDescription));
+            com.Parameters.Add(new SqlParameter("@status", history.historyStatus));
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "AddHistory";
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dataSet);
+        }
+
+        private void SetHistoryModel()
+        {
+            history.moduleId = grade.moduleId;
+            history.historyDate = DateTime.Now;
+            history.historyDescription = string.Format("Grade added for student {0} by lecturer {1}", DdlStudent.SelectedItem.ToString(), LoginForm.userName);
+            history.historyStatus = "active";
+        }
+
+        private void SaveGrade()
+        {
+            DbConfiguration configuration = new DbConfiguration();
+            SqlCommand com = new SqlCommand();
+            DataSet dataSet = new DataSet();
+            com.Connection = new SqlConnection(configuration.GetConnectionString());
+            com.Parameters.Add(new SqlParameter("@userId", grade.userId));
+            com.Parameters.Add(new SqlParameter("@moduleId", grade.moduleId));
+            com.Parameters.Add(new SqlParameter("@StudentId", grade.studentId));
+            com.Parameters.Add(new SqlParameter("@grade", grade.grade));
+            com.Parameters.Add(new SqlParameter("@gradeStatus", grade.gradeStatus));
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "AddGrade";
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dataSet);
+        }
+
+        private bool IsValid()
+        {
+            bool result = true;
+
+            if (DdlProgramme.SelectedIndex == -1)
+            {
+                MessageBox.Show("Select programme");
+                return false;
+            }
+            if (DdlCohort.SelectedIndex == -1)
+            {
+                MessageBox.Show("Select cohort");
+                return false;
+            }
+            if (DdlModule.SelectedIndex == -1)
+            {
+                MessageBox.Show("Select module");
+                return false;
+            }
+            if (DdlStudent.SelectedIndex == -1)
+            {
+                MessageBox.Show("Select student");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtbxGrade.Text))
+            {
+                MessageBox.Show("Enter grade for the selected student");
+                return false;
+            }
+
+            return result;
+        }
+
+        private void txtbxGrade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            const int BACKSPACE = 8;
+            const int DECIMAL_POINT = 46;
+            const int ZERO = 48;
+            const int NINE = 57;
+            const int NOT_FOUND = -1;
+
+            int keyvalue = (int)e.KeyChar; // not really necessary to cast to int
+
+            if ((keyvalue == BACKSPACE) ||
+            ((keyvalue >= ZERO) && (keyvalue <= NINE))) return;
+            // Allow the first (but only the first) decimal point
+            if ((keyvalue == DECIMAL_POINT) &&
+            (txtbxGrade.Text.IndexOf(".") == NOT_FOUND)) return;
+            // Allow nothing else
+            e.Handled = true;
+        }
+
+        private void DdlModule_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string moduleName = DdlModule.SelectedItem.ToString();
+
+            GetModuleIdBymoduleName(moduleName);
+        }
+
+        private void GetModuleIdBymoduleName(string moduleName)
+        {
+            DbConfiguration configuration = new DbConfiguration();
+            SqlCommand com = new SqlCommand();
+            DataSet dataSet = new DataSet();
+            com.Connection = new SqlConnection(configuration.GetConnectionString());
+            com.Parameters.Add(new SqlParameter("@moduleName", moduleName));
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "RetrieveModuleIdByModuleName";
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dataSet);
+
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                grade.moduleId = Convert.ToInt32(row["moduleId"].ToString());
+            }
+        }
+
+        private void DdlStudent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] student = DdlStudent.SelectedItem.ToString().Split(' ');
+
+            GetStudentIdByStudentName(student);
+        }
+
+        private void GetStudentIdByStudentName(string[] student)
+        {
+            DbConfiguration configuration = new DbConfiguration();
+            SqlCommand com = new SqlCommand();
+            DataSet dataSet = new DataSet();
+            com.Connection = new SqlConnection(configuration.GetConnectionString());
+            com.Parameters.Add(new SqlParameter("@firstname", student[0]));
+            com.Parameters.Add(new SqlParameter("@lastname", student[1]));
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "RetrieveStudentIdByStudentName";
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dataSet);
+
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                grade.studentId = Convert.ToInt32(row["studentId"].ToString());
             }
         }
     }
