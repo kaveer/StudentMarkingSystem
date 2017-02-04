@@ -251,6 +251,8 @@ namespace StudentMarkingSystem.UIComponent.Admin
             SqlDataAdapter adapter = new SqlDataAdapter(com);
             adapter.Fill(dataSet);
 
+            //dataSet.Tables[0].Rows[0]["Firstname"].ToString();
+
             foreach (DataRow row in dataSet.Tables[0].Rows)
             {
               student.StudentFirstname =  studentFirstName_update.Text = row["Firstname"].ToString();
