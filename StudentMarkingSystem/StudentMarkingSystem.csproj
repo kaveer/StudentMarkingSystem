@@ -115,6 +115,12 @@
     <Compile Include="UIComponent\Admin\UIStudent.Designer.cs">
       <DependentUpon>UIStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIComponent\Common\UIHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UIComponent\Common\UIHistory.Designer.cs">
+      <DependentUpon>UIHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIComponent\Lecturer\UIGrade.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,9 +161,13 @@
     <EmbeddedResource Include="UIComponent\Admin\UIStudent.resx">
       <DependentUpon>UIStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UIComponent\Common\UIHistory.resx">
+      <DependentUpon>UIHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UIComponent\Lecturer\UIGrade.resx">
       <DependentUpon>UIGrade.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DBscript\ERD\StudentMarkingSystemErd.dmd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -177,46 +187,47 @@
     <None Include="Resources\University_of_Technology_Mauritius_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBscript\CreateDatabase.sql" />
-    <Content Include="DBscript\dbo.AddCohort.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.AddGrade.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.AddHistory.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.AddModule.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.AddProgram.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.AddStudent.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.AddUserCredential.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.AddUserInfo.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.cohortTable.Table.sql" />
-    <Content Include="DBscript\dbo.DeleteCohort.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.DeleteLecturer.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.DeleteModule.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.DeleteProgramById.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.DeleteStudentByIndex.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.gradeTable.Table.sql" />
-    <Content Include="DBscript\dbo.historyTable.Table.sql" />
-    <Content Include="DBscript\dbo.login.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.moduleTable.Table.sql" />
-    <Content Include="DBscript\dbo.programmeTable.Table.sql" />
-    <Content Include="DBscript\dbo.RetrieveCohortByCohortName.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.RetrieveCohortByProgrammeName.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.RetrieveLecturer.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.RetrieveLecturerIdByName.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.RetrieveModuleByCohortName.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.RetrieveModuleIdByModuleName.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.RetrieveProgram.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.RetrieveProgramByName.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.RetrieveStudentByCohortName.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.RetrieveStudentDetailsByCohortName.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.RetrieveStudentDetailsByIndex.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.RetrieveStudentIdByStudentName.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.RetrieveUserIdByEmail.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.studentTable.Table.sql" />
-    <Content Include="DBscript\dbo.UpdateCohort.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.UpdateProgramById.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.UpdateStudentByIndex.StoredProcedure.sql" />
-    <Content Include="DBscript\dbo.userInfoTable.Table.sql" />
-    <Content Include="DBscript\dbo.userTable.Table.sql" />
-    <Content Include="DBscript\dbo.ValidateEmailForUser.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\CreateDatabase.sql" />
+    <Content Include="DBscript\Scripts\dbo.AddCohort.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.AddGrade.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.AddHistory.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.AddModule.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.AddProgram.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.AddStudent.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.AddUserCredential.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.AddUserInfo.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.cohortTable.Table.sql" />
+    <Content Include="DBscript\Scripts\dbo.DeleteCohort.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.DeleteLecturer.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.DeleteModule.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.DeleteProgramById.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.DeleteStudentByIndex.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.gradeTable.Table.sql" />
+    <Content Include="DBscript\Scripts\dbo.historyTable.Table.sql" />
+    <Content Include="DBscript\Scripts\dbo.login.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.moduleTable.Table.sql" />
+    <Content Include="DBscript\Scripts\dbo.programmeTable.Table.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveCohortByCohortName.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveCohortByProgrammeName.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveHistory.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveLecturer.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveLecturerIdByName.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveModuleByCohortName.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveModuleIdByModuleName.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveProgram.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveProgramByName.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveStudentByCohortName.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveStudentDetailsByCohortName.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveStudentDetailsByIndex.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveStudentIdByStudentName.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveUserIdByEmail.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.studentTable.Table.sql" />
+    <Content Include="DBscript\Scripts\dbo.UpdateCohort.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.UpdateProgramById.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.UpdateStudentByIndex.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.userInfoTable.Table.sql" />
+    <Content Include="DBscript\Scripts\dbo.userTable.Table.sql" />
+    <Content Include="DBscript\Scripts\dbo.ValidateEmailForUser.StoredProcedure.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UserProfileIcon.bmp" />

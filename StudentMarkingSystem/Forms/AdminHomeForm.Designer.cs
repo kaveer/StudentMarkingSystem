@@ -31,11 +31,12 @@
             this.BtnStudentManagement = new System.Windows.Forms.Button();
             this.BtnCohort = new System.Windows.Forms.Button();
             this.BtnLecturerManagement = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnHistory = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.BtnProgramme = new System.Windows.Forms.Button();
+            this.BtnModuleManagment = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -45,7 +46,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.BtnModuleManagment = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -93,17 +93,18 @@
             this.BtnLecturerManagement.UseVisualStyleBackColor = true;
             this.BtnLecturerManagement.Click += new System.EventHandler(this.BtnLecturerManagement_Click);
             // 
-            // button1
+            // BtnHistory
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 213);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(228, 53);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "History";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnHistory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnHistory.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnHistory.Location = new System.Drawing.Point(0, 213);
+            this.BtnHistory.Name = "BtnHistory";
+            this.BtnHistory.Size = new System.Drawing.Size(228, 53);
+            this.BtnHistory.TabIndex = 7;
+            this.BtnHistory.Text = "History";
+            this.BtnHistory.UseVisualStyleBackColor = true;
+            this.BtnHistory.Click += new System.EventHandler(this.BtnHistory_Click);
             // 
             // panel1
             // 
@@ -111,7 +112,7 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.BtnProgramme);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.BtnHistory);
             this.panel1.Controls.Add(this.BtnModuleManagment);
             this.panel1.Controls.Add(this.BtnLecturerManagement);
             this.panel1.Controls.Add(this.BtnCohort);
@@ -159,6 +160,19 @@
             this.BtnProgramme.Text = "Programme";
             this.BtnProgramme.UseVisualStyleBackColor = true;
             this.BtnProgramme.Click += new System.EventHandler(this.BtnProgramme_Click);
+            // 
+            // BtnModuleManagment
+            // 
+            this.BtnModuleManagment.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnModuleManagment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnModuleManagment.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnModuleManagment.Location = new System.Drawing.Point(0, 159);
+            this.BtnModuleManagment.Name = "BtnModuleManagment";
+            this.BtnModuleManagment.Size = new System.Drawing.Size(228, 54);
+            this.BtnModuleManagment.TabIndex = 12;
+            this.BtnModuleManagment.Text = "Module management";
+            this.BtnModuleManagment.UseVisualStyleBackColor = true;
+            this.BtnModuleManagment.Click += new System.EventHandler(this.BtnModuleManagment_Click);
             // 
             // panel2
             // 
@@ -254,19 +268,6 @@
             this.MainPanel.Size = new System.Drawing.Size(736, 554);
             this.MainPanel.TabIndex = 9;
             // 
-            // BtnModuleManagment
-            // 
-            this.BtnModuleManagment.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnModuleManagment.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnModuleManagment.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnModuleManagment.Location = new System.Drawing.Point(0, 159);
-            this.BtnModuleManagment.Name = "BtnModuleManagment";
-            this.BtnModuleManagment.Size = new System.Drawing.Size(228, 54);
-            this.BtnModuleManagment.TabIndex = 12;
-            this.BtnModuleManagment.Text = "Module management";
-            this.BtnModuleManagment.UseVisualStyleBackColor = true;
-            this.BtnModuleManagment.Click += new System.EventHandler(this.BtnModuleManagment_Click);
-            // 
             // AdminHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,7 +295,7 @@
         private System.Windows.Forms.Button BtnCohort;
         private System.Windows.Forms.Button BtnStudentManagement;
         private System.Windows.Forms.Button BtnLecturerManagement;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnHistory;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;

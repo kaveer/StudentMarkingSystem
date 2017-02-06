@@ -39,7 +39,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtnExit = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnHistory = new System.Windows.Forms.Button();
             this.BtnGrade = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
@@ -141,7 +141,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(241)))));
             this.panel1.Controls.Add(this.BtnExit);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.BtnHistory);
             this.panel1.Controls.Add(this.BtnGrade);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,17 +175,18 @@
             this.button2.Text = "Option";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // BtnHistory
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(228, 53);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "History";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnHistory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnHistory.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnHistory.Location = new System.Drawing.Point(0, 53);
+            this.BtnHistory.Name = "BtnHistory";
+            this.BtnHistory.Size = new System.Drawing.Size(228, 53);
+            this.BtnHistory.TabIndex = 7;
+            this.BtnHistory.Text = "History";
+            this.BtnHistory.UseVisualStyleBackColor = true;
+            this.BtnHistory.Click += new System.EventHandler(this.BtnHistory_Click);
             // 
             // BtnGrade
             // 
@@ -244,7 +245,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button BtnExit;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnHistory;
         private System.Windows.Forms.Button BtnGrade;
         private System.Windows.Forms.Panel MainPanel;
     }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StudentMarkingSystem.UIComponent.Common;
 using StudentMarkingSystem.UIComponent.Lecturer;
 
 namespace StudentMarkingSystem.Forms
@@ -15,6 +16,7 @@ namespace StudentMarkingSystem.Forms
     {
         LoginForm login = new LoginForm();
         UIGrade grade = new UIGrade();
+        UIHistory history = new UIHistory();
 
         public LecturerHomeForm()
         {
@@ -36,6 +38,12 @@ namespace StudentMarkingSystem.Forms
         {
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(grade);
+        }
+
+        private void BtnHistory_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(history);
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StudentMarkingSystem.UIComponent.Admin;
+using StudentMarkingSystem.UIComponent.Common;
 
 namespace StudentMarkingSystem.Forms
 {
@@ -18,6 +19,7 @@ namespace StudentMarkingSystem.Forms
         UIStudent student = new UIStudent();
         UILecturer lecturer = new UILecturer();
         UIModule module = new UIModule();
+        UIHistory history = new UIHistory();
 
         public AdminHomeForm()
         {
@@ -58,6 +60,12 @@ namespace StudentMarkingSystem.Forms
         {
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(module);
+        }
+
+        private void BtnHistory_Click(object sender, EventArgs e)
+        {
+            MainPanel.Controls.Clear();
+            MainPanel.Controls.Add(history);
         }
     }
 }

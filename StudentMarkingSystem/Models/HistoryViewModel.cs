@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentMarkingSystem.Models
 {
-    class HistoryViewModel
+   public class HistoryViewModel
     {
         public int historyId { get; set; }
         public int moduleId { get; set; }
