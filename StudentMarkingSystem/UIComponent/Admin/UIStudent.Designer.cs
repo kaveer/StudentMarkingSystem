@@ -68,10 +68,8 @@
             this.dropDownListProgramme_update = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.BtnDownloadResult = new System.Windows.Forms.Button();
-            this.dataGridViewResult = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -460,30 +458,20 @@
             this.BtnDownloadResult.UseVisualStyleBackColor = true;
             this.BtnDownloadResult.Click += new System.EventHandler(this.BtnDownloadResult_Click);
             // 
-            // dataGridViewResult
-            // 
-            this.dataGridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewResult.Location = new System.Drawing.Point(32, 365);
-            this.dataGridViewResult.Name = "dataGridViewResult";
-            this.dataGridViewResult.Size = new System.Drawing.Size(240, 63);
-            this.dataGridViewResult.TabIndex = 10;
-            // 
             // UIStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridViewResult);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "UIStudent";
-            this.Size = new System.Drawing.Size(676, 452);
+            this.Size = new System.Drawing.Size(676, 388);
             this.Load += new System.EventHandler(this.UIStudent_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -531,6 +519,5 @@
         private System.Windows.Forms.ComboBox dropDownListProgramme_update;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button BtnDownloadResult;
-        private System.Windows.Forms.DataGridView dataGridViewResult;
     }
 }
