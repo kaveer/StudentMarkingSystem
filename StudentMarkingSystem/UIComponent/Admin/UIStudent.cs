@@ -5,6 +5,10 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using StudentMarkingSystem.Models;
 using StudentMarkingSystem.Repository;
+using iTextSharp.text.pdf;
+using System.IO;
+using iTextSharp.text;
+using System.Reflection;
 
 namespace StudentMarkingSystem.UIComponent.Admin
 {
@@ -26,6 +30,7 @@ namespace StudentMarkingSystem.UIComponent.Admin
         private void UIStudent_Load(object sender, EventArgs e)
         {
             RetrieveProgram();
+            
         }
 
         private void RetrieveProgram()
@@ -379,6 +384,81 @@ namespace StudentMarkingSystem.UIComponent.Admin
             emailAddress_update.Text = "";
             studentAddress_update.Text = "";
             contactNumber_update.Text = "";
+        }
+
+        private void BtnDownloadResult_Click(object sender, EventArgs e)
+        {
+            if (dropDownListProgramme_update.Text == "")
+            {
+                MessageBox.Show("Select Programme");
+                return;
+            }
+            if (dropDownListCohort_update.Text == "")
+            {
+                MessageBox.Show("Select Cohort");
+                return;
+            }
+            if (dropDownlistIndex_update.Text == "")
+            {
+                MessageBox.Show("Select Index");
+                return;
+            }
+
+            GetGradesByStudentIndex();
+        }
+
+        private void GetGradesByStudentIndex()
+        {
+            DbConfiguration configuration = new DbConfiguration();
+            SqlCommand com = new SqlCommand();
+            DataSet dataSet = new DataSet();
+            com.Connection = new SqlConnection(configuration.GetConnectionString());
+            com.Parameters.Add(new SqlParameter("@index", dropDownlistIndex_update.SelectedItem.ToString()));
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "RetrieveGradesByStudentIndex";
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dataSet);
+
+
+            PdfPTable pdfTable = new PdfPTable(dataSet.Tables[0].Columns.Count);
+
+            foreach (DataColumn column in dataSet.Tables[0].Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.ColumnName));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                pdfTable.AddCell(cell);
+            }
+
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+
+                pdfTable.AddCell(row["firstname"].ToString());
+                pdfTable.AddCell(row["lastname"].ToString());
+                pdfTable.AddCell(row["name"].ToString());
+                pdfTable.AddCell(row["code"].ToString());
+                pdfTable.AddCell(row["grade"].ToString());
+                pdfTable.AddCell(row["semester"].ToString());
+                pdfTable.AddCell(row["semesterYear"].ToString());
+            }
+            try
+            {
+                Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+                PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("GeneratedPdf.pdf", FileMode.Create));
+                doc.Open();
+
+                Paragraph paragraph = new Paragraph(string.Format("Result for the student with index :{0}\n\n", dropDownlistIndex_update.SelectedItem.ToString()));
+                doc.Add(paragraph);
+                doc.Add(pdfTable);
+
+                doc.Close();
+
+                System.Diagnostics.Process.Start("GeneratedPdf.pdf");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

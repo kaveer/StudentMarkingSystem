@@ -33,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalComponents\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalComponents\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ExternalComponents\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -209,6 +221,7 @@
     <Content Include="DBscript\Scripts\dbo.programmeTable.Table.sql" />
     <Content Include="DBscript\Scripts\dbo.RetrieveCohortByCohortName.StoredProcedure.sql" />
     <Content Include="DBscript\Scripts\dbo.RetrieveCohortByProgrammeName.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.RetrieveGradesByStudentIndex.StoredProcedure.sql" />
     <Content Include="DBscript\Scripts\dbo.RetrieveHistory.StoredProcedure.sql" />
     <Content Include="DBscript\Scripts\dbo.RetrieveLecturer.StoredProcedure.sql" />
     <Content Include="DBscript\Scripts\dbo.RetrieveLecturerIdByName.StoredProcedure.sql" />
@@ -229,6 +242,10 @@
     <Content Include="DBscript\Scripts\dbo.userInfoTable.Table.sql" />
     <Content Include="DBscript\Scripts\dbo.userTable.Table.sql" />
     <Content Include="DBscript\Scripts\dbo.ValidateEmailForUser.StoredProcedure.sql" />
+    <Content Include="ExternalComponents\itextsharp.dll" />
+    <Content Include="ExternalComponents\itextsharp.pdfa.dll" />
+    <Content Include="ExternalComponents\iTextSharp.xml" />
+    <Content Include="ExternalComponents\itextsharp.xtra.dll" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UserProfileIcon.bmp" />
@@ -242,6 +259,7 @@
   <ItemGroup>
     <None Include="Resources\male-circle-512.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
