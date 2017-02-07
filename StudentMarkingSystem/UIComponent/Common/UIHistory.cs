@@ -58,7 +58,10 @@ namespace StudentMarkingSystem.UIComponent.Common
         {
             GridViewProgramme.DataSource = table;
             GridViewProgramme.Columns[0].Visible = false;
-            GridViewProgramme.Columns[2].Width = 400;
+            GridViewProgramme.Columns[1].Visible = false;
+            GridViewProgramme.Columns[4].Visible = false;
+            GridViewProgramme.Columns[5].Visible = false;
+            GridViewProgramme.Columns[3].Width = 500;
             // GridViewProgramme.Columns[3].Visible = false;
             //dataGridView1.DataBindings.ToString();
         }

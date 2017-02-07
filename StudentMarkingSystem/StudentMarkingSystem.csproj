@@ -223,6 +223,7 @@
     <Content Include="DBscript\Scripts\dbo.RetrieveUserIdByEmail.StoredProcedure.sql" />
     <Content Include="DBscript\Scripts\dbo.studentTable.Table.sql" />
     <Content Include="DBscript\Scripts\dbo.UpdateCohort.StoredProcedure.sql" />
+    <Content Include="DBscript\Scripts\dbo.UpdateGradeStatus.StoredProcedure.sql" />
     <Content Include="DBscript\Scripts\dbo.UpdateProgramById.StoredProcedure.sql" />
     <Content Include="DBscript\Scripts\dbo.UpdateStudentByIndex.StoredProcedure.sql" />
     <Content Include="DBscript\Scripts\dbo.userInfoTable.Table.sql" />

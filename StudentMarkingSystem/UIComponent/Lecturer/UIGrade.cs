@@ -140,12 +140,30 @@ namespace StudentMarkingSystem.UIComponent.Lecturer
         {
             if (IsValid())
             {
-                //TODO:change status to studentid and moduleid in grade table
+                
                 SetText();
+                ChangeGradeStatus();
                 SaveGrade();
                 SaveHistory();
                 MessageBox.Show("Grade successfully saved");
             }
+        }
+
+        private void ChangeGradeStatus()
+        {
+            DbConfiguration configuration = new DbConfiguration();
+            SqlCommand com = new SqlCommand();
+            DataSet dataSet = new DataSet();
+            com.Connection = new SqlConnection(configuration.GetConnectionString());
+            //com.Parameters.Add(new SqlParameter("@userId", grade.userId));
+            com.Parameters.Add(new SqlParameter("@moduleId", grade.moduleId));
+            com.Parameters.Add(new SqlParameter("@StudentId", grade.studentId));
+            //com.Parameters.Add(new SqlParameter("@grade", grade.grade));
+            com.Parameters.Add(new SqlParameter("@gradeStatus", "0"));
+            com.CommandType = CommandType.StoredProcedure;
+            com.CommandText = "UpdateGradeStatus";
+            SqlDataAdapter adapter = new SqlDataAdapter(com);
+            adapter.Fill(dataSet);
         }
 
         private void SetText()
@@ -176,7 +194,7 @@ namespace StudentMarkingSystem.UIComponent.Lecturer
         {
             history.moduleId = grade.moduleId;
             history.historyDate = DateTime.Now;
-            history.historyDescription = string.Format("Grade added for student {0} by lecturer {1}", DdlStudent.SelectedItem.ToString(), LoginForm.userName);
+            history.historyDescription = string.Format("Grade {2} added for student {0} by lecturer {1} for the module {3}", DdlStudent.SelectedItem.ToString(), LoginForm.userName , grade.grade , DdlModule.SelectedItem.ToString());
             history.historyStatus = "active";
         }
 
