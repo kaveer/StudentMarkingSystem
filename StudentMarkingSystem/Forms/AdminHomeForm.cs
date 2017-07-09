@@ -20,6 +20,7 @@ namespace StudentMarkingSystem.Forms
         UILecturer lecturer = new UILecturer();
         UIModule module = new UIModule();
         UIHistory history = new UIHistory();
+        LoginForm backToLogin = new LoginForm();
 
         public AdminHomeForm()
         {
@@ -67,5 +68,14 @@ namespace StudentMarkingSystem.Forms
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(history);
         }
+
+        private void Btn_exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainPanel.Controls.Clear();
+            backToLogin.Show();
+        }
+
+
     }
 }

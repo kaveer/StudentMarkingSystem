@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
 
-            test
+           
         }
 
         #region Windows Form Designer generated code
@@ -35,7 +35,7 @@
             this.BtnLecturerManagement = new System.Windows.Forms.Button();
             this.BtnHistory = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.Btn_exit = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.BtnProgramme = new System.Windows.Forms.Button();
             this.BtnModuleManagment = new System.Windows.Forms.Button();
@@ -111,7 +111,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(189)))), ((int)(((byte)(241)))));
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.Btn_exit);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.BtnProgramme);
             this.panel1.Controls.Add(this.BtnHistory);
@@ -126,17 +126,18 @@
             this.panel1.Size = new System.Drawing.Size(228, 554);
             this.panel1.TabIndex = 8;
             // 
-            // button5
+            // Btn_exit
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(0, 374);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(228, 54);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "Exit";
-            this.button5.UseVisualStyleBackColor = true;
+            this.Btn_exit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_exit.Font = new System.Drawing.Font("Goudy Old Style", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_exit.Location = new System.Drawing.Point(0, 374);
+            this.Btn_exit.Name = "Btn_exit";
+            this.Btn_exit.Size = new System.Drawing.Size(228, 54);
+            this.Btn_exit.TabIndex = 11;
+            this.Btn_exit.Text = "Exit";
+            this.Btn_exit.UseVisualStyleBackColor = true;
+            this.Btn_exit.Click += new System.EventHandler(this.Btn_exit_Click);
             // 
             // button2
             // 
@@ -309,7 +310,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button Btn_exit;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button BtnProgramme;
         private System.Windows.Forms.Button BtnModuleManagment;

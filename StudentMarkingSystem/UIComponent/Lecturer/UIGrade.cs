@@ -159,7 +159,7 @@ namespace StudentMarkingSystem.UIComponent.Lecturer
             com.Parameters.Add(new SqlParameter("@moduleId", grade.moduleId));
             com.Parameters.Add(new SqlParameter("@StudentId", grade.studentId));
             //com.Parameters.Add(new SqlParameter("@grade", grade.grade));
-            com.Parameters.Add(new SqlParameter("@gradeStatus", "0"));
+            com.Parameters.Add(new SqlParameter("@gradeStatus", "deactive"));
             com.CommandType = CommandType.StoredProcedure;
             com.CommandText = "UpdateGradeStatus";
             SqlDataAdapter adapter = new SqlDataAdapter(com);
