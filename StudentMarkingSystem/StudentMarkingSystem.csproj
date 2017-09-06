@@ -179,6 +179,7 @@
     <EmbeddedResource Include="UIComponent\Lecturer\UIGrade.resx">
       <DependentUpon>UIGrade.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DBscript\DBBackUp\SMSdbBackUp" />
     <None Include="DBscript\ERD\StudentMarkingSystemErd.dmd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
